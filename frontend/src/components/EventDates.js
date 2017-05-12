@@ -24,20 +24,3 @@ class EventDates extends Component {
 }
 
 export default EventDates;
-
-/*
-<div className='grid'>
-                {
-                    this.props.data.map(d => {
-                        const date = Util.toMoment([d]).pop();
-
-                        return (
-                            <div className='col-12 grid'>
-                                <div className='col-6'>{date.format('D MMM')}</div>
-                                <div className='col-6'>{date.format('HH:mm')}</div>
-                            </div>
-                        );
-                    })
-                }
-            </div>
-*/
