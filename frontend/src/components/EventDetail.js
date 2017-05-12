@@ -16,7 +16,7 @@ class EventDetail extends Component {
 
 
     componentDidMount() {
-        Store.events.get(this.props.match.params.id).then(({ event }) => this.setState({ event }));
+        Store.events.get(this.props.eventId).then(({ event }) => this.setState({ event }));
     }
 
     render() {
