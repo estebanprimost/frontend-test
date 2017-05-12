@@ -1,9 +1,11 @@
 var db = require('./db');
 var express = require('express');
 var bodyParser = require('body-parser')
+var cors = require('cors');
 var app = express();
 
 app.use(bodyParser.json());
+app.use(cors())
 
 app.get('/events', function (req, res) {
   res.json({events: db.findAll()});
