@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import Header from './layout/Header';
 import Store from '../store';
-import { Link } from 'react-router-dom';
 import EventDates from './EventDates';
 
 class EventDetail extends Component {
@@ -14,7 +12,6 @@ class EventDetail extends Component {
         };
     }
 
-
     componentDidMount() {
         Store.events.get(this.props.eventId).then(({ event }) => this.setState({ event }));
     }
@@ -22,25 +19,23 @@ class EventDetail extends Component {
     render() {
         const event = this.state.event;
         return (
-            <div className='col'>
-                <Link to='/'>&lt;- Events</Link>
-
-                <div className="col grid-2">
-                    <div className="col-8">
-                        <Header title={event.title}></Header>
-                        <h4>{event.location}</h4>
+            <div className='container is-fluid'>
+                <div className="columns is-multiline">
+                    <div className="column is-8">
+                        <h1 className='title'>{event.location}</h1>
                         <p>{event.description}</p>
-                    </div>
-                    <div className="col-4">
-                        <img src={event.eventImage} role='presentation' />
-                    </div>
-                    <div className="col-4">
+                        <div className='is-clearfix'>
                         {
                             event.dates ? 
                                 <EventDates dates={event.dates} /> :
                                 ''
                         }
+                        </div>
                     </div>
+                    <div className="column is-4 has-text-centered">
+                        <img src={event.eventImage} role='presentation' />
+                    </div>
+                    
                 </div>
             </div>
         );

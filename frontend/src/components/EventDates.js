@@ -1,23 +1,27 @@
 import React, {Component} from 'react';
 import Util from '../util';
+import styles from '../styles/EventDates.css';
+
 
 class EventDates extends Component {
     render() {
         const dates = this.props.dates || [];
         return (
-            <div className='grid'>
-                {
-                    dates.sort().map(d => {
-                        const date = Util.toMoment([d]).pop();
+            <div className={`content ${styles.EventDates}`}>
+                <h3 className='subtitle'>Event dates</h3>
+                    <ul>
+                    {
+                        dates.sort().map((d, i) => {
+                            const date = Util.toMoment([d]).pop();
 
-                        return (
-                            <div className='col-12 grid'>
-                                <div className='col-6'>{date.format('D MMM')}</div>
-                                <div className='col-6'>{date.format('HH:mm')}</div>
-                            </div>
-                        );
-                    })
-                }
+                            return (
+                                <li key={i}>
+                                    {date.format('DD MMM')} - {date.format('HH:mm')}
+                                </li>
+                            );
+                        })
+                    }
+                    </ul>
             </div>
         );
     }

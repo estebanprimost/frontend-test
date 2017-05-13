@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Store from '../store';
 import Event from './Event';
 import Util from '../util';
-import Header from './layout/Header';
+import FeaturedEvents from './FeaturedEvents';
+
 
 class EventList extends Component {
 
@@ -24,14 +25,20 @@ class EventList extends Component {
     
     render() {
         return (
-            <div className="col grid">
-                <div className='col-12'><Header title='Events' /></div>
-                <div className='col-8 grid-2'>
-                    {
-                        this.state.events.map(e => 
-                            <Event key={e.id} data={e} />
-                        )
-                    }
+            <div className='container is-fluid'>
+                <div className='columns'>
+                    <div className='column is-8'>
+                        <div className='columns is-multiline'>
+                            {
+                                this.state.events.map(e => 
+                                    <Event key={e.id} data={e} />
+                                )
+                            }
+                        </div>
+                    </div>
+                    <div className='column is-4'>
+                        <FeaturedEvents />
+                    </div>
                 </div>
             </div>
         );

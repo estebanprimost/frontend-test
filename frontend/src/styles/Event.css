@@ -1,0 +1,23 @@
+.Event {
+    padding: 3%;
+    /*width: 100%;*/
+}
+
+.EventTile {
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    background-position: center center;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+    height: 260px;
+}
+
+.Date, .Title {
+    color: #FFF !important;
+}
+
+.Title {
+    margin-bottom: 15%;
+    margin-top: 15%;
+}
