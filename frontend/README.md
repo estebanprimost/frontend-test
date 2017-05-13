@@ -14,7 +14,9 @@
     1. Vía liveserver desarrollo:
         * `cp .env.example .env`
         * `npm start`
-    2. Levantar la carpeta build con algún server.
+    2. Build:
+        * `npm run build`
+        * Levantar la carpeta build con algún server (toma el index.html como base).
 
-### Back
+### Backend
 * Agregué CORS para express.
