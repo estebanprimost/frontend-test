@@ -3,8 +3,7 @@
 ### Front
 * Órden de fechas: Los eventos se listan ordenados de forma ascendente por la fecha más antigua de cada evento.
 * El archivo store.js hace las veces de repositorio (vía de acceso a los datos).
-* En la carpeta frontend/build está el build de la app
-* En frontend/src el fuente.
+* Usé un custom-script forkeado de create-react-app para no perder tiempo en tooling, lo único que pide para funcar, antes del `npm start` o `npm build` es un .env, que lo agregué en el versionado, aunque no debería comitearse claro con un par de env vars.
 
 #### Deploy:
 1. correr el backend en el puerto 3000 
@@ -12,7 +11,6 @@
 3. `npm install`
 4. Correr app, dos opciones:
     1. Vía liveserver desarrollo:
-        * `cp .env.example .env`
         * `npm start`
     2. Build:
         * `npm run build`
